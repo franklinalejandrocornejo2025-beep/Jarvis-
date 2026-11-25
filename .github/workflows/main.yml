@@ -8,7 +8,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Descomprimir proyecto
-        run: unzip -o jarvis-android.zip -d project
+        run: |
+          for z in *.zip; do unzip -o "$z" -d project; done
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
